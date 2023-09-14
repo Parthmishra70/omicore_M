@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Call App</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='index.css')}}">
+   </head>
+<body>
+    <div id="video-call-form">
+        <h1>OmiCore</h1>
+        <form action="/come" method="{{ user1or2 }}">
+            <input type="text" id="username" name="username" placeholder="Enter your username">
+            <button type="submit">Start Video Call</button>
+        </form>
+    </div>
+</body>
+</html>

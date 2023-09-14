@@ -1,0 +1,8 @@
+﻿pip3 install Flask
+pip3 install flask_sqlalchemy
+pip3 install twilio
+pip3 install flask_socketio
+pip3 install mysqlclient
+pip3 install simple-websocket
+
+
