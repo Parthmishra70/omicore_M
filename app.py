@@ -16,7 +16,6 @@ socketio = SocketIO(app)
 
 
 # Configure the database URI
-# app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql://u943641251_omegle:GHZzFZ?Gc8]@82.180.138.188:3306/u943641251_omegle'
 app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql://username:password@port/database_name'
 
 sec = secrets.token_hex(16)
