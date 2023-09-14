@@ -22,6 +22,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = f'mysql://username:password@port/databas
 sec = secrets.token_hex(16)
 app.config['SECRET_KEY'] = sec  # secret key
 
+
 # Initialize the SQLAlchemy extension
 db = SQLAlchemy(app)
  
@@ -43,6 +44,7 @@ class Rooms(db.Model):
     status2 = db.Column(db.String(120), nullable=True)
     date = db.Column(db.String(12), nullable=True)
 
+user_presence = {}
 
 #### for the chat sys main twilio api for chat  ####
 conversation = None
@@ -124,6 +126,7 @@ def index():
 @socketio.on('user_connect')
 def handle_connect(roomName):
     user_id = request.sid  # Use a unique identifier for the user
+    user_presence[user_id] = 'online'  # Set the user's status to 'online'
     join_room(roomName)  # Join the user to the specified room
     socketio.emit('user_status', {'user_id': user_id, 'status': 'online'})
                 
@@ -238,6 +241,8 @@ def user_join_offline(roomName, user_token):
 def handle_disconnect():
     try:
         user_id = request.sid
+        if user_id in user_presence:
+            user_presence[user_id] = 'offline'  # Set the user's status to 'offline'
         # Emit a 'user_status' event with the user's status and associated roomName
         socketio.emit('user_status', {'user_id': user_id, 'status': 'offline'})
 
