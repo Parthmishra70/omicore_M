@@ -1,8 +1,8 @@
-﻿pip3 install Flask
-pip3 install flask_sqlalchemy
-pip3 install twilio
-pip3 install flask_socketio
-pip3 install mysqlclient
-pip3 install simple-websocket
+﻿Flask == 2.3.3
+Flask-SQLAlchemy == 3.1.1
+Twilio == 8.9.0
+Flask-SocketIO == 5.3.6
+mysqlclient == 2.2.0
+simple-websocket == 0.10.1
 
 
