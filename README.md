@@ -1,7 +1,7 @@
 # omicore_M
 Python,webrtc,socketio
-Html,css,js
-with mysql
+
+Html,css,jsv with mysql
 
 #p2p_room
 
